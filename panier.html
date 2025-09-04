@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Panier</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="p-4">
+
+  <div class="container mt-4">
+    <h2>Contenu de votre panier</h2>
+    <div id="cart-container"></div>
+    <h4>Total : <span id="cart-total">0</span> $</h4>
+
+    <div class="mt-4 d-flex justify-content-between">
+      <a href="index.html" class="btn btn-outline-primary">
+        <i class="fas fa-arrow-left"></i> Retour à la boutique
+      </a>
+      <button id="clear-cart" class="btn btn-danger">
+        <i class="fas fa-trash-alt"></i> Vider le panier
+      </button>
+    </div>
+  </div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const cart = JSON.parse(localStorage.getItem('cart')) || {};
+  const cartContainer = document.getElementById('cart-container');
+  const cartTotal = document.getElementById('cart-total');
+
+  if (Object.keys(cart).length === 0) {
+    cartContainer.innerHTML = '<p>Votre panier est vide.</p>';
+    cartTotal.textContent = '0';
+    return;
+  }
+
+  let total = 0;
+  for (let item in cart) {
+    const itemData = cart[item];
+    const itemTotal = itemData.quantity * itemData.price;
+    total += itemTotal;
+
+    const div = document.createElement('div');
+    div.className = 'd-flex align-items-center mb-3 p-2 border rounded';
+    div.innerHTML = `
+      <img src="${itemData.image}" alt="${item}" style="width: 80px; height: 80px; object-fit: cover; margin-right: 15px;">
+      <div>
+        <strong>${item}</strong><br>
+        ${itemData.quantity} × ${itemData.price} $ = <strong>${itemTotal} $</strong>
+      </div>
+    `;
+
+    cartContainer.appendChild(div);
+  }
+
+  cartTotal.textContent = total.toFixed(2);
+});
+</script>
+<script>
+  document.getElementById('clear-cart').addEventListener('click', () => {
+    if (confirm("Êtes-vous sûr de vouloir vider le panier ?")) {
+      localStorage.removeItem('cart');
+      location.reload(); // Recharge la page pour afficher un panier vide
+    }
+  });
+</script>
+
+
+
+
+   <script src="panier.js"></script>
+  
+</body>
+</html>

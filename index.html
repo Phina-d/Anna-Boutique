@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Bootstrap link -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+  <!-- JS Bootstrap (nécessaire pour dropdown) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Font awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="style.css" />
+  <title>Anna Shop</title>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Shopping Card</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Disabled</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+            <i class="las la-shopping-cart"></i>
+          </form>
+
+    <div class="step-container" style="display:flex; align-items:center; gap:10px;">
+  <a href="paiement.html" class="step-link" style="text-decoration:none; color:inherit; display:flex; align-items:center; gap:5px;">
+    <i class="fas fa-credit-card" style="font-size:18px; color:#198754;"></i>
+    <span>Paiement</span>
+  </a>
+</div>
+
+  <div class="step">
+    <a href="panier.html" class="cart-link">
+      <span id="cart-item-name">Article panier</span>
+      <i class="fas fa-shopping-cart"></i>
+      <span id="cart-count">0</span>
+
+</a>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </nav>
+  </header>
+  <main>
+    <section class="shopping-card-container">
+      <div class="total-price">
+        <div class="container">
+      <h1 class="text-center mt-5">Nos produits</h1>
+      <div class="text-center mt-4 mb-4">
+        <button class="btn btn-primary filter-btn" data-filter="all">Tous</button>
+  <button class="btn btn-outline-primary filter-btn" data-filter="sacs">Sacs</button>
+  <button class="btn btn-outline-primary filter-btn" data-filter="montres">Montres</button>
+  <button class="btn btn-outline-primary filter-btn" data-filter="tableaux">Tableaux</button>
+        <button class="btn" > Total price : </button>
+        <span class="total"> 0 $ </span>
+      </div>
+      <div id="cart-items" class="mt-4">
+  <ul class="list-group"></ul>
+</div>
+<div class="container my-4">
+  <input type="text" id="searchInput" class="form-control" placeholder="Rechercher un produit...">
+</div>
+
+      <div class="row justify-content-center">
+        <!-- Product 1 : baskets -->
+        <div class="col-12 col-sm-6 col-md-3 card-body" data-category="chaussures">
+      <div class="card h-100 shadow-sm">
+        <img src="asset/images/baskets.png" class="card-img-top" alt="baskets" />
+        <div class="card-body text-center">
+          <h5 class="card-title">Baskets</h5>
+          <p class="card-text">Chaussures de sport confortables</p>
+          <h4 class="unit-price text-primary fw-bold">100 $</h4>
+          <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
+            <i class="fas fa-minus-circle text-danger"></i>
+            <span class="quantity fw-bold">0</span>
+            <i class="fas fa-plus-circle text-success"></i>
+          </div>
+          <div class="d-flex justify-content-center gap-3">
+            <i class="fas fa-trash-alt text-danger"></i>
+            <i class="fas fa-heart text-danger"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+         <!-- Produit 2 -->
+    <div class="col-12 col-sm-6 col-md-3 card-body" data-category="sacs">
+      <div class="card h-100 shadow-sm">
+        <img src="asset/images/sac.jpg" class="card-img-top" alt="sac gris" />
+        <div class="card-body text-center">
+          <h5 class="card-title">Sac Gris</h5>
+          <p class="card-text">Sac à main élégant</p>
+          <h4 class="unit-price text-primary fw-bold">50 $</h4>
+          <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
+            <i class="fas fa-minus-circle text-danger"></i>
+            <span class="quantity fw-bold">0</span>
+            <i class="fas fa-plus-circle text-success"></i>
+          </div>
+          <div class="d-flex justify-content-center gap-3">
+            <i class="fas fa-trash-alt text-danger"></i>
+            <i class="fas fa-heart text-danger"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+       <!-- Produit 3 -->
+    <div class="col-12 col-sm-6 col-md-3 card-body" data-category="montres">
+      <div class="card h-100 shadow-sm">
+        <img src="asset/images/montre brc.jpg" class="card-img-top" alt="montre" />
+        <div class="card-body text-center">
+          <h5 class="card-title">Montre Poignée</h5>
+          <p class="card-text">Montre-bracelet classique</p>
+          <h4 class="unit-price text-primary fw-bold">40 $</h4>
+          <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
+            <i class="fas fa-minus-circle text-danger"></i>
+            <span class="quantity fw-bold">0</span>
+            <i class="fas fa-plus-circle text-success"></i>
+          </div>
+          <div class="d-flex justify-content-center gap-3">
+            <i class="fas fa-trash-alt text-danger"></i>
+            <i class="fas fa-heart text-danger"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+         <!-- Produit 4 -->
+    <div class="col-12 col-sm-6 col-md-3 card-body" data-category="sacs">
+      <div class="card h-100 shadow-sm">
+        <img src="asset/images/sac2.jpg" class="card-img-top" alt="sac rouge" />
+        <div class="card-body text-center">
+          <h5 class="card-title">Sac Rouge</h5>
+          <p class="card-text">Sac en cuir moderne</p>
+          <h4 class="unit-price text-primary fw-bold">65 $</h4>
+          <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
+            <i class="fas fa-minus-circle text-danger"></i>
+            <span class="quantity fw-bold">0</span>
+            <i class="fas fa-plus-circle text-success"></i>
+          </div>
+          <div class="d-flex justify-content-center gap-3">
+            <i class="fas fa-trash-alt text-danger"></i>
+            <i class="fas fa-heart text-danger"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- Produit : Montre Femme -->
+<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="montres">
+  <div class="card h-100 shadow-sm">
+    <img src="asset/images/montre D.jpg" class="card-img-top" alt="montre femme" />
+    <div class="card-body text-center">
+      <h5 class="card-title">Watch Woman</h5>
+      <p class="card-text">Montre élégante pour femme</p>
+      <h4 class="unit-price text-primary fw-bold">60 $</h4>
+      <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
+        <i class="fas fa-minus-circle text-danger"></i>
+        <span class="quantity fw-bold">0</span>
+        <i class="fas fa-plus-circle text-success"></i>
+      </div>
+      <div class="d-flex justify-content-center gap-3">
+        <i class="fas fa-trash-alt text-danger"></i>
+        <i class="fas fa-heart text-danger"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Produit : Sac Marron -->
+<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="sacs">
+  <div class="card shadow-sm border-0 h-100">
+    <img src="asset/images/sac3.jpg" class="card-img-top" alt="Sac marron" />
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Bag Marron</h5>
+      <p class="card-text text-muted">Sac élégant en cuir pour toutes vos sorties.</p>
+      <h4 class="unit-price text-primary mb-3">60 $</h4>
+      <div class="d-flex justify-content-center align-items-center gap-3 mb-3">
+        <i class="fas fa-minus-circle text-danger fs-4" style="cursor:pointer"></i>
+        <span class="quantity fw-bold fs-5">0</span>
+        <i class="fas fa-plus-circle text-success fs-4" style="cursor:pointer"></i>
+      </div>
+      <div class="d-flex justify-content-center gap-4">
+        <i class="fas fa-trash-alt text-secondary fs-5" style="cursor:pointer"></i>
+        <i class="fas fa-heart text-danger fs-5" style="cursor:pointer"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Produit : Montre Homme -->
+<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="montres">
+  <div class="card shadow-sm border-0 h-100">
+    <img src="asset/images/montre H.jpg" class="card-img-top" alt="Montre Homme" />
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Montre Homme</h5>
+      <p class="card-text text-muted">Montre élégante et moderne pour homme.</p>
+      <h4 class="unit-price text-primary mb-3">40 $</h4>
+      <div class="d-flex justify-content-center align-items-center gap-3 mb-3">
+        <i class="fas fa-minus-circle text-danger fs-4" style="cursor:pointer"></i>
+        <span class="quantity fw-bold fs-5">0</span>
+        <i class="fas fa-plus-circle text-success fs-4" style="cursor:pointer"></i>
+      </div>
+      <div class="d-flex justify-content-center gap-4">
+        <i class="fas fa-trash-alt text-secondary fs-5" style="cursor:pointer"></i>
+        <i class="fas fa-heart text-danger fs-5" style="cursor:pointer"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Produit : Tableau Peinture 1 -->
+<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="tableaux">
+  <div class="card shadow-sm border-0 h-100">
+    <img src="asset/images/Tableau 3.jpg" class="card-img-top" alt="Tableau" />
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Tableau Peinture</h5>
+      <p class="card-text text-muted">Superbe peinture pour décorer votre intérieur.</p>
+      <h4 class="unit-price text-primary mb-3">350 $</h4>
+      <div class="d-flex justify-content-center align-items-center gap-3 mb-3">
+        <i class="fas fa-minus-circle text-danger fs-4" style="cursor:pointer"></i>
+        <span class="quantity fw-bold fs-5">0</span>
+        <i class="fas fa-plus-circle text-success fs-4" style="cursor:pointer"></i>
+      </div>
+      <div class="d-flex justify-content-center gap-4">
+        <i class="fas fa-trash-alt text-secondary fs-5" style="cursor:pointer"></i>
+        <i class="fas fa-heart text-danger fs-5" style="cursor:pointer"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Produit : Tableau Peinture 2 -->
+<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="tableaux">
+  <div class="card shadow-sm border-0 h-100">
+    <img src="asset/images/Tableau 2.jpg" class="card-img-top" alt="Tableau" />
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Painting Green</h5>
+      <p class="card-text text-muted">This is a Painting</p>
+      <h4 class="unit-price text-primary mb-3">340 $</h4>
+      <div class="d-flex justify-content-center align-items-center gap-3 mb-3">
+        <i class="fas fa-minus-circle text-danger fs-4" style="cursor:pointer"></i>
+        <span class="quantity fw-bold fs-5">0</span>
+        <i class="fas fa-plus-circle text-success fs-4" style="cursor:pointer"></i>
+      </div>
+      <div class="d-flex justify-content-center gap-4">
+        <i class="fas fa-trash-alt text-secondary fs-5" style="cursor:pointer"></i>
+        <i class="fas fa-heart text-danger fs-5" style="cursor:pointer"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Produit : Tableau Peinture 3 -->
+<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="tableaux">
+  <div class="card shadow-sm border-0 h-100">
+    <img src="asset/images/Tableau 4.jpg" class="card-img-top" alt="Tableau" />
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Painting Violet</h5>
+      <p class="card-text text-muted">This is a Painting</p>
+      <h4 class="unit-price text-primary mb-3">250 $</h4>
+      <div class="d-flex justify-content-center align-items-center gap-3 mb-3">
+        <i class="fas fa-minus-circle text-danger fs-4" style="cursor:pointer"></i>
+        <span class="quantity fw-bold fs-5">0</span>
+        <i class="fas fa-plus-circle text-success fs-4" style="cursor:pointer"></i>
+      </div>
+      <div class="d-flex justify-content-center gap-4">
+        <i class="fas fa-trash-alt text-secondary fs-5" style="cursor:pointer"></i>
+        <i class="fas fa-heart text-danger fs-5" style="cursor:pointer"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Produit : Tableau Peinture 3 -->
+<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="tableaux">
+  <div class="card shadow-sm border-0 h-100">
+    <img src="asset/images/Tableau.jpg" class="card-img-top" alt="Tableau" />
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Painting </h5>
+      <p class="card-text text-muted">This is a Painting</p>
+      <h4 class="unit-price text-primary mb-3">150 $</h4>
+      <div class="d-flex justify-content-center align-items-center gap-3 mb-3">
+        <i class="fas fa-minus-circle text-danger fs-4" style="cursor:pointer"></i>
+        <span class="quantity fw-bold fs-5">0</span>
+        <i class="fas fa-plus-circle text-success fs-4" style="cursor:pointer"></i>
+      </div>
+      <div class="d-flex justify-content-center gap-4">
+        <i class="fas fa-trash-alt text-secondary fs-5" style="cursor:pointer"></i>
+        <i class="fas fa-heart text-danger fs-5" style="cursor:pointer"></i>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Produit : Salon 1 -->
+<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="salons">
+  <div class="card shadow-sm border-0 h-100">
+    <img src="asset/images/salon2.jpg" class="card-img-top" alt="Salon" />
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Living Room Lampe</h5>
+      <p class="card-text text-muted">This is a Living Room</p>
+      <h4 class="unit-price text-primary mb-3">340 $</h4>
+      <div class="d-flex justify-content-center align-items-center gap-3 mb-3">
+        <i class="fas fa-minus-circle text-danger fs-4" style="cursor:pointer"></i>
+        <span class="quantity fw-bold fs-5">0</span>
+        <i class="fas fa-plus-circle text-success fs-4" style="cursor:pointer"></i>
+      </div>
+      <div class="d-flex justify-content-center gap-4">
+        <i class="fas fa-trash-alt text-secondary fs-5" style="cursor:pointer"></i>
+        <i class="fas fa-heart text-danger fs-5" style="cursor:pointer"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Produit : Salon 2 -->
+<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="salons">
+  <div class="card shadow-sm border-0 h-100">
+    <img src="asset/images/IMG-20250508-WA0069.jpg" class="card-img-top" alt="Salon" />
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Living Room</h5>
+      <p class="card-text text-muted">This is a Living Room</p>
+      <h4 class="unit-price text-primary mb-3">350 $</h4>
+      <div class="d-flex justify-content-center align-items-center gap-3 mb-3">
+        <i class="fas fa-minus-circle text-danger fs-4" style="cursor:pointer"></i>
+        <span class="quantity fw-bold fs-5">0</span>
+        <i class="fas fa-plus-circle text-success fs-4" style="cursor:pointer"></i>
+      </div>
+      <div class="d-flex justify-content-center gap-4">
+        <i class="fas fa-trash-alt text-secondary fs-5" style="cursor:pointer"></i>
+        <i class="fas fa-heart text-danger fs-5" style="cursor:pointer"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+       <!-- Produit : Shoes Talon -->
+<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="chaussures">
+  <div class="card shadow-sm border-0 h-100">
+    <img src="asset/images/chaus D1.jpg" class="card-img-top" alt="Shoes Talon" />
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Shoes Talon</h5>
+      <p class="card-text text-muted">This is a Shoes</p>
+      <h4 class="unit-price text-primary mb-3">50 $</h4>
+      <div class="d-flex justify-content-center align-items-center gap-3 mb-3">
+        <i class="fas fa-minus-circle text-danger fs-4" style="cursor:pointer"></i>
+        <span class="quantity fw-bold fs-5">0</span>
+        <i class="fas fa-plus-circle text-success fs-4" style="cursor:pointer"></i>
+      </div>
+      <div class="d-flex justify-content-center gap-4">
+        <i class="fas fa-trash-alt text-secondary fs-5" style="cursor:pointer"></i>
+        <i class="fas fa-heart text-danger fs-5" style="cursor:pointer"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Produit : Shoes D -->
+<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="chaussures">
+  <div class="card shadow-sm border-0 h-100">
+    <img src="asset/images/chaus D.jpg" class="card-img-top" alt="Shoes D" />
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Shoes D</h5>
+      <p class="card-text text-muted">This is a Shoes</p>
+      <h4 class="unit-price text-primary mb-3">40 $</h4>
+      <div class="d-flex justify-content-center align-items-center gap-3 mb-3">
+        <i class="fas fa-minus-circle text-danger fs-4" style="cursor:pointer"></i>
+        <span class="quantity fw-bold fs-5">0</span>
+        <i class="fas fa-plus-circle text-success fs-4" style="cursor:pointer"></i>
+      </div>
+      <div class="d-flex justify-content-center gap-4">
+        <i class="fas fa-trash-alt text-secondary fs-5" style="cursor:pointer"></i>
+        <i class="fas fa-heart text-danger fs-5" style="cursor:pointer"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Produit : Shoes Crampon -->
+<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="chaussures">
+  <div class="card shadow-sm border-0 h-100">
+    <img src="asset/images/crampon.jpg" class="card-img-top" alt="Shoes Crampon" />
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Shoes Crampon</h5>
+      <p class="card-text text-muted">This is a Shoes</p>
+      <h4 class="unit-price text-primary mb-3">50 $</h4>
+      <div class="d-flex justify-content-center align-items-center gap-3 mb-3">
+        <i class="fas fa-minus-circle text-danger fs-4" style="cursor:pointer"></i>
+        <span class="quantity fw-bold fs-5">0</span>
+        <i class="fas fa-plus-circle text-success fs-4" style="cursor:pointer"></i>
+      </div>
+      <div class="d-flex justify-content-center gap-4">
+        <i class="fas fa-trash-alt text-secondary fs-5" style="cursor:pointer"></i>
+        <i class="fas fa-heart text-danger fs-5" style="cursor:pointer"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Produit : Sac au dos -->
+<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="sacs">
+  <div class="card shadow-sm border-0 h-100">
+    <img src="asset/images/bag.png" class="card-img-top" alt="Sac au dos" />
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Sac au dos</h5>
+      <p class="card-text text-muted">This is a Bag</p>
+      <h4 class="unit-price text-primary mb-3">40 $</h4>
+      <div class="d-flex justify-content-center align-items-center gap-3 mb-3">
+        <i class="fas fa-minus-circle text-danger fs-4" style="cursor:pointer"></i>
+        <span class="quantity fw-bold fs-5">0</span>
+        <i class="fas fa-plus-circle text-success fs-4" style="cursor:pointer"></i>
+      </div>
+      <div class="d-flex justify-content-center gap-4">
+        <i class="fas fa-trash-alt text-secondary fs-5" style="cursor:pointer"></i>
+        <i class="fas fa-heart text-danger fs-5" style="cursor:pointer"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Produit : Dress R -->
+<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="Habits">
+  <div class="card shadow-sm border-0 h-100">
+    <img src="asset/images/robe.jpg" class="card-img-top" alt="Dress R" />
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Dress R</h5>
+      <p class="card-text text-muted">This is a Dress</p>
+      <h4 class="unit-price text-primary mb-3">40 $</h4>
+      <div class="d-flex justify-content-center align-items-center gap-3 mb-3">
+        <i class="fas fa-minus-circle text-danger fs-4" style="cursor:pointer"></i>
+        <span class="quantity fw-bold fs-5">0</span>
+        <i class="fas fa-plus-circle text-success fs-4" style="cursor:pointer"></i>
+      </div>
+      <div class="d-flex justify-content-center gap-4">
+        <i class="fas fa-trash-alt text-secondary fs-5" style="cursor:pointer"></i>
+        <i class="fas fa-heart text-danger fs-5" style="cursor:pointer"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Produit : Montre Homme -->
+<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="montres">
+  <div class="card shadow-sm border-0 h-100">
+    <img src="asset/images/montre.jpg" class="card-img-top" alt="Montre" />
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Montre Dame</h5>
+      <p class="card-text text-muted">Montre élégante et moderne pour femme.</p>
+      <h4 class="unit-price text-primary mb-3">25 $</h4>
+      <div class="d-flex justify-content-center align-items-center gap-3 mb-3">
+        <i class="fas fa-minus-circle text-danger fs-4" style="cursor:pointer"></i>
+        <span class="quantity fw-bold fs-5">0</span>
+        <i class="fas fa-plus-circle text-success fs-4" style="cursor:pointer"></i>
+      </div>
+      <div class="d-flex justify-content-center gap-4">
+        <i class="fas fa-trash-alt text-secondary fs-5" style="cursor:pointer"></i>
+        <i class="fas fa-heart text-danger fs-5" style="cursor:pointer"></i>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Produit : Nightie -->
+<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" data-category="Habits">
+  <div class="card shadow-sm border-0 h-100">
+    <img src="asset/images/nuissette.jpg" class="card-img-top" alt="Nightie" />
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Nightie</h5>
+      <p class="card-text text-muted">This is a Nightie</p>
+      <h4 class="unit-price text-primary mb-3">30 $</h4>
+      <div class="d-flex justify-content-center align-items-center gap-3 mb-3">
+        <i class="fas fa-minus-circle text-danger fs-4" style="cursor:pointer"></i>
+        <span class="quantity fw-bold fs-5">0</span>
+        <i class="fas fa-plus-circle text-success fs-4" style="cursor:pointer"></i>
+      </div>
+      <div class="d-flex justify-content-center gap-4">
+        <i class="fas fa-trash-alt text-secondary fs-5" style="cursor:pointer"></i>
+        <i class="fas fa-heart text-danger fs-5" style="cursor:pointer"></i>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+  </main>
+  </div>
+  <section class="section">
+    <h2>Pourquoi Choisir Nos Produits ?</h2>
+    <div class="features">
+      <i class="fa fa-check"></i> Qualité Supérieure
+      <i class="fa fa-check"></i> Livraison Express
+      <i class="fa fa-check"></i> Garantie 30 Jours
+    </div>
+  </section>
+  </div>
+   <!-- Footer -->
+<footer class="bg-dark text-center text-light py-4 mt-5">
+  <div class="container mb-3">
+    <!-- Icônes réseaux sociaux -->
+    <a href="https://www.facebook.com/" target="_blank" class="text-white me-4">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://twitter.com/" target="_blank" class="text-white me-4">
+      <i class="fab fa-twitter"></i>
+    </a>
+    <a href="https://www.instagram.com/" target="_blank" class="text-white me-4">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.linkedin.com/" target="_blank" class="text-white me-4">
+      <i class="fab fa-linkedin-in"></i>
+    </a>
+    <a href="https://github.com/" target="_blank" class="text-white">
+      <i class="fab fa-github"></i>
+    </a>
+  </div>
+
+  <!-- Liens rapides -->
+  <div class="container mb-3">
+    <a href="cgv.html" class="text-white me-3 text-decoration-none">CGV</a>
+    <a href="contact.html" class="text-white me-3 text-decoration-none">Contact</a>
+    <a href="faq.html" class="text-white me-3 text-decoration-none">FAQ</a>
+    <a href="support.html" class="text-white me-3 text-decoration-none">Support</a>
+    <a href="assistance.html" class="text-white text-decoration-none">Assistance</a>
+  </div>
+
+  <!-- Moyens de paiement -->
+  <div class="container mb-3">
+    <span class="text-white me-2">Paiement sécurisé : </span>
+    <i class="fab fa-cc-visa fa-2x me-2"></i>
+    <i class="fab fa-cc-mastercard fa-2x me-2"></i>
+    <i class="fab fa-cc-amex fa-2x me-2"></i>
+    <i class="fab fa-cc-paypal fa-2x"></i>
+  </div>
+
+  <div>
+    © 2025 Anna Shop - Tous droits réservés.
+  </div>
+</footer>
+
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <!-- My JS -->
+  <script src="app.js"></script>
+  
+</body>
+
+</html>
