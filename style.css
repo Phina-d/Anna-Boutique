@@ -1,0 +1,263 @@
+/* .navbar-brand {
+  color: green !important;
+} */
+
+body {
+    background-color: #f8f9fa;
+    background-image: 
+      linear-gradient(45deg, #ccc 25%, transparent 25%), 
+      linear-gradient(-45deg, #ccc 25%, transparent 25%), 
+      linear-gradient(45deg, transparent 75%, #ccc 75%), 
+      linear-gradient(-45deg, transparent 75%, #ccc 75%);
+      background-repeat: repeat;
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+    
+  }
+  
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .i {
+    font-size: 35px;
+    cursor: pointer;
+    margin: 0 10px;
+    color: black;
+  }
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  .step-container {
+      background: linear-gradient(135deg, #e6ffe6, #f4fff4);
+      border-radius: 20px;
+      padding: 20px 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin: 20px auto;
+      max-width: 800px;
+    }
+
+    .step {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+
+    .step:hover {
+      background-color: #d1f7d1;
+      transform: scale(1.03);
+    }
+
+    .step i {
+      font-size: 18px;
+      color: #198754;
+    }
+
+    .cart-link {
+      text-decoration: none;
+      color: inherit; 
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cart-link:hover {
+      text-decoration: none; 
+      color: #198754;
+    }
+
+    #cart-count {
+      background-color: #198754;
+      color: white;
+      border-radius: 50%;
+      padding: 3px 8px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+  .shopping-card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #e7e7e7;
+    border-radius: 10px;
+    padding: 3%;
+    margin: 50px 0;
+  }
+  .shopping-card-container .total-price {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.fas {
+  display: inline-block;
+  font-size: 24px;
+  margin: 5px;
+}
+
+/* Forcer retour à la ligne avant le 3e icône (fa-trash-alt) */
+.fas:nth-of-type(3) {
+  display: block;
+  margin-top: 40px; /* espace vertical entre les deux lignes */
+}
+
+.fas.fa-trash-alt {
+  margin-right: 60px;
+}
+.btn {
+  background-color: #3498db; /* bleu */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.total-price span:not(.btn) {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f0f0f0;
+  font-weight: 500;
+}
+.item {
+  border: 1px solid #ccc;      /* gris clair */
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: #333;
+  background-color: #f9f9f9;
+  margin-left: 4px;
+}
+ .item btn {
+    padding: 10px;
+    margin: 5px;
+    background-color: #eee;
+     }
+  .total-price span {
+    font-size: 30px;
+  }
+  
+  .total {
+  color: blue;
+  font-size: 10px;
+  padding: 0 4px;
+  line-height: 0.8;
+  display: inline-block;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer; /* Indique que c’est cliquable */
+  transition: all 0.2s ease;
+}
+.total:active {
+  background-color: #e0e0e0; /* Fond plus sombre au clic */
+  transform: scale(0.95);   /* Effet d’enfoncement */
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+  .list-products {
+  display: flex;
+  flex-wrap: wrap;              /* permet le retour à la ligne */
+  justify-content: center;      /* centre les cartes */
+  gap: 20px;                    /* espace entre les cartes */
+  padding: 20px;
+}
+
+.card-body {
+  flex: 0 1 18rem;              /* chaque carte garde une largeur de 18rem */
+}
+i {
+  margin: 0 10px; /* espace horizontal de 10px autour de chaque icône */
+}
+  .card {
+  width: 250px;             /* largeur fixe */
+  height: 400px;            /* hauteur fixe */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card img {
+  height: 150px;
+  object-fit: contain;
+}
+
+.card-body {
+  text-align: center;
+  width: 100%;
+}
+
+.unit-price {
+  color: #333;
+  margin: 10px 0;
+}
+
+.quantity {
+  margin: 0 10px;
+}
+.fa-trash-alt {
+  color: #dc3545; /* rouge */
+}
+
+.fa-heart {
+  color: rosybrown; /* rose/rouge pour "favori" */
+}
+
+i.fas:hover {
+  transform: scale(1.2);
+  opacity: 0.8;
+}
+
+.section {
+  text-align: center;
+  padding: 20px;
+}
+
+.features {
+  margin-top: 10px;
+}
+
+.features i {
+  margin-right: 8px;
+  color: red;
+  /* Remplace "green" par la couleur de ton choix */
+  margin-right: 8px;
+  /* Optionnel : espace entre l'icône et le texte */
+  font-size: 24px;
+}
+
+
+footer {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: right;
+  padding: 10px;
+}
+ 
+
+
+  

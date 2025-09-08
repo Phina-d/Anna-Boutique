@@ -228,21 +228,27 @@ i.fas:hover {
 }
 
 .section {
-  text-align: center;
-  padding: 20px;
+  text-align: center; /* Centre le titre et le contenu */
+  padding: 40px 20px;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
 .features {
-  margin-top: 10px;
+  display: flex;           /* Utilise Flexbox */
+  justify-content: center; /* Centre horizontalement */
+  gap: 30px;               /* Espace entre les items */
+  flex-wrap: wrap;         /* Passe à la ligne si nécessaire */
+  font-size: 1.2rem;
+  align-items: center;
 }
 
 .features i {
-  margin-right: 8px;
-  color: red;
-  /* Remplace "green" par la couleur de ton choix */
-  margin-right: 8px;
-  /* Optionnel : espace entre l'icône et le texte */
-  font-size: 24px;
+  color: green;
+  margin-right: 5px;
 }
 
 

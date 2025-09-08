@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Action - Anna Shop</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Flex pour que le footer reste en bas */
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    main {
+      flex: 1;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+
+    /* Navbar stylée */
+    .navbar {
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    /* Sections principales */
+    section {
+      background-color: #ffffff;
+      padding: 2rem;
+      margin-top: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    h1, h2 {
+      color: #343a40;
+    }
+
+    ul li {
+      margin-bottom: 0.75rem;
+      line-height: 1.6;
+    }
+
+    /* Footer stylisé */
+    footer {
+      background-color: #212529;
+      color: #fff;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+      margin-top: auto;
+    }
+
+    /* Formulaire de recherche arrondi */
+    .navbar .form-control {
+      border-radius: 20px;
+    }
+
+    .navbar .btn-outline-success {
+      border-radius: 20px;
+    }
+
+    /* Responsive padding */
+    @media (max-width: 768px) {
+      main {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Anna Shop</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="action.html">Action</a></li>
+              <li><a class="dropdown-item" href="another-action.html">Another Action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="something-else.html">Something Else Here</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenu principal -->
+  <main class="container">
+    <h1 class="mb-4">Action</h1>
+    <p>Bienvenue sur la page <strong>Action</strong>. Ici vous trouverez des informations détaillées sur nos actions et services. Vous pouvez organiser votre visite, découvrir nos promotions et en apprendre davantage sur nos offres spéciales.</p>
+    
+    <section>
+      <h2>Nos services</h2>
+      <ul>
+        <li>Service 1 : description rapide et conseils pratiques.</li>
+        <li>Service 2 : description rapide avec avantages clés.</li>
+        <li>Service 3 : description rapide et recommandations.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Nos promotions</h2>
+      <p>Découvrez nos offres du moment et profitez des meilleurs tarifs pour nos clients fidèles.</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Anna Shop. Tous droits réservés.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
