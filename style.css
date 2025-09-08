@@ -201,6 +201,12 @@ i {
   height: 150px;
   object-fit: contain;
 }
+.card-img-top {
+  object-fit: cover; /* garde les proportions et remplit la card */
+  height: 200px;     /* ajuste selon ton besoin */
+}
+
+
 
 .card-body {
   text-align: center;
